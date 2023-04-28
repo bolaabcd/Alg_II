@@ -27,16 +27,16 @@ class Escreve_bit {
 			n = 0;
 		}
 		void insere(bool bit) {
-			//cout << bit;
 			if(n%8 == 0)
 				s.push_back(0);
 			s.back() |= ((int)bit<<(n%8));
 			n++;		
 		}
 		void coloca_string(string s2) {
-			for(char c : s2)
+			for(char c : s2) {
 				for(int i = 0; i < 8; i++)
-					insere(int(c)&(1<<i));
+					insere(((unsigned char)c)&(1<<i));
+			}
 		}
 		void close() {
 			ofstream out(outfile);
@@ -154,33 +154,34 @@ class Trie {
 	private:
 		int n; 
 		vector<vector<int>> ida;
-		vector<pair<int,char>> volta;
-		set<char> chars;
-		vector<pair<int,char>> lista;
+		vector<pair<int,unsigned char>> volta;
+		set<unsigned char> chars;
+		vector<pair<int,unsigned char>> lista;
 	public:
 		Trie() {
 			n = 1;
 			ida = vector<vector<int>>(1,vector<int>(256,-1));
-			volta = vector<pair<int,char>>(1,make_pair(-1,-1));
+			volta = vector<pair<int,unsigned char>>(1,make_pair(-1,-1));
 		}
 		// verifica se a string existe dentro da trie como prefixo
 		bool tem_str(string s) {
 			int j = 0; // id do no atual
 			for(int i = 0; i < s.size(); i++)
-				if(j != -1)
-					j = ida[j][s[i]];
+				if(j != -1) {
+					j = ida[j][(unsigned char)s[i]];
+				}
 				else
 					return false;
 
 			return j != -1;
 		}
 		// Coloca caractere no codigo cod
-		void bota_char(char c, int cod) {
+		void bota_char(unsigned char c, int cod) {
 			if(cod >= n) {
 				cerr << "Insercao invalida na Trie!" << endl;
 				exit(1);
 			}
-			ida[cod][c] = n;
+			ida[cod][(unsigned char)c] = n;
 			ida.push_back(vector<int>(256,-1));
 			volta.emplace_back(cod,c);
 			chars.insert(c);
@@ -190,12 +191,12 @@ class Trie {
 		void bota_str(string s) {
 			int j = 0;
 			for(int i = 0; i < s.size(); i++) {
-				if(ida[j][s[i]] == -1)
+				if(ida[j][(unsigned char)s[i]] == -1)
 					bota_char(s[i],j);
-				j = ida[j][s[i]];
+				j = ida[j][(unsigned char)s[i]];
 			}
 		}
-		// Primeiro temos uma lista de caracteres usados no texto. Depois teremos a lista (codigo,char).
+		// Primeiro temos uma lista de caracteres usados no texto. Depois teremos a lista (codigo,(unsigned char)).
 		void salve(string saida) {
 			Escreve_bit out(saida);
 
@@ -204,7 +205,7 @@ class Trie {
 				exit(1);
 			}
 
-			map<char,int> char_cod;
+			map<unsigned char,int> char_cod;
 			int amt = 0;
 			for(char c : chars) {
 				char_cod[c] = amt;
@@ -218,10 +219,10 @@ class Trie {
 
 			// lista de caracteres usados
 			escreve_int(out,chars.size(),8); // no maximo 2^8 = 256 caracteres usados.
-			for(char c : chars)
+			for(unsigned char c : chars)
 				escreve_int(out,c,8);
 				
-			// Lista codigo,char
+			// Lista codigo,(unsigned char)
 			escreve_int(out,lista.size(),30); // no maximo 2^30-1 = 1073741823 entradas na trie.
 			for(int i = 0; i < lista.size(); i++) {
 				escreve_int(out,lista[i].first,nbits_cod);

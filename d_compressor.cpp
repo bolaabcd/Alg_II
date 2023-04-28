@@ -11,7 +11,7 @@ void comprime(string entrada, string saida) {
 	string s;
 	Trie trie;
 	while(true){
-		char c;
+		unsigned char c;
 		if(!in.good())
 			erro_arq(entrada);
 		c = in.get();
@@ -37,9 +37,9 @@ void descomprime(string entrada, string saida) {
 	Escreve_bit out(saida);
 
 	int nchars = ler_int(in,8);
-	map<int,char> get_car;
+	map<int,unsigned char> get_car;
 	for(int i = 0; i < nchars; i++) {
-		char c = ler_int(in,8);
+		unsigned char c = ler_int(in,8);
 		get_car[i] = c;
 	}
 	int nbits_char = get_nbits(nchars);
@@ -59,8 +59,8 @@ void descomprime(string entrada, string saida) {
 	for(int i = 0; i < n; i++) {
 		int cod = ler_int(in,m);
 		int car = ler_int(in,nbits_char);
-		out.coloca_string(trie.val(cod)+get_car[car]);
-		trie.bota_char(car,i);
+		out.coloca_string(trie.val(cod)+char(get_car[car]));
+		trie.bota_char(get_car[car],i);
 	}
 	in.close();
 	out.close();
