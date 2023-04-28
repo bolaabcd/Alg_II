@@ -31,37 +31,35 @@ void comprime(string entrada, string saida) {
 }
 
 void descomprime(string entrada, string saida) {
-	ifstream in(entrada);
-	if(!in.good())
-		erro_arq(entrada);
+	Le_bit in(entrada);
 	ofstream out(saida);
 	if(!out.good())
 		erro_arq(saida);
-	unsigned long long n;
-	n = ler_int(in, 64); // Leh 64 bits e bota em n (assumindo que esse programa nao vai chegar nem perto de ter 2**64 codigos)
+
+	int nchars = ler_int(in,8);
+	map<int,char> get_car;
+	for(int i = 0; i < nchars; i++) {
+		char c = ler_int(in,8);
+		get_car[i] = c;
+	}
+	int nbits_char = get_nbits(nchars);
+
+	int n;
+	n = ler_int(in, 32); // Assumindo que esse programa nao vai chegar nem perto de ter 2**32 codigos.
 	
 	if(n == 0) {
 		cerr << "Arquivo \"" << entrada << "\" indica tamanho zero pro arquivo comprimido."  << endl;
 		exit(1);
 	}
 
-	int m = 0;// numero de bits pra representar um codigo
-	for(int i = 63; !((1LL<<i) & n); i--) {
-		m = 64-i-1;
-	}
+	int m = get_nbits(n);
 
 	string texto;
 	Trie trie;
 	for(int i = 1; i <= n; i++) {
-		if(!in.good())
-			erro_arq(entrada);
 		int cod = ler_int(in,m);
-		if(!in.good())
-			erro_arq(entrada);
-		char car = in.get();
-		if(!out.good())
-			erro_arq(saida);
-		out << trie.val(cod)+car;
+		int car = ler_int(in,nbits_char);
+		out << trie.val(cod)+get_car[car];
 		trie.bota_char(car,i);
 	}
 	in.close();
