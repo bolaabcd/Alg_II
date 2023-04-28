@@ -24,17 +24,17 @@ void comprime(string entrada, string saida) {
 		}
 	}
 	in.close();
-	if(s != "")
+	if(s != "") {
 		trie.bota_str(s);
+	}
 	
 	trie.salve(saida);
+	//cout << endl;
 }
 
 void descomprime(string entrada, string saida) {
 	Le_bit in(entrada);
-	ofstream out(saida);
-	if(!out.good())
-		erro_arq(saida);
+	Escreve_bit out(saida);
 
 	int nchars = ler_int(in,8);
 	map<int,char> get_car;
@@ -45,7 +45,7 @@ void descomprime(string entrada, string saida) {
 	int nbits_char = get_nbits(nchars);
 
 	int n;
-	n = ler_int(in, 32); // Assumindo que esse programa nao vai chegar nem perto de ter 2**32 codigos.
+	n = ler_int(in, 30); // Assumindo que esse programa nao vai chegar nem perto de ter 2**30 codigos.
 	
 	if(n == 0) {
 		cerr << "Arquivo \"" << entrada << "\" indica tamanho zero pro arquivo comprimido."  << endl;
@@ -56,10 +56,10 @@ void descomprime(string entrada, string saida) {
 
 	string texto;
 	Trie trie;
-	for(int i = 1; i <= n; i++) {
+	for(int i = 0; i < n; i++) {
 		int cod = ler_int(in,m);
 		int car = ler_int(in,nbits_char);
-		out << trie.val(cod)+get_car[car];
+		out.coloca_string(trie.val(cod)+get_car[car]);
 		trie.bota_char(car,i);
 	}
 	in.close();
