@@ -83,7 +83,6 @@ class Le_bit {
 
 // Escreve val em siz bits
 void escreve_int(Escreve_bit &out, int val, int siz) {
-	//cout << endl << val << ' ' << siz << endl;
 	if(siz >= 31) {
 		cerr << "Tentativa de escrever quantidade invalida de bits" << endl;
 		exit(1);
@@ -100,10 +99,8 @@ int ler_int(Le_bit& in, int siz) {
 	int s = 0;
 	for(int i = 0; i < siz; i++) {
 		int bit = in.le_bit();
-		//cout << bit;
 		s |= (bit << i);
 	}
-	//cout << endl;
 	return s;
 }
 
@@ -140,12 +137,13 @@ void uso_d_compressor(string chamado) {
 // Quantos bits precisamos pra representarmos valores ateh amt
 int get_nbits(int amt) {
 		amt--;
+		if(amt == 0)
+			return 1;
 		int nbits = 0;
 		for(int i = 31; !((1LL<<i) & ((long long)amt)); i--) {
 			nbits = i;
 		}
 		amt++;
-		//cout << amt << '_' << nbits << endl;
 		return nbits;
 }
 
@@ -207,7 +205,7 @@ class Trie {
 		void salve(string saida) {
 			Escreve_bit out(saida);
 
-			if(n-1 != lista.size() or n == lista.size()) {
+			if(n-1 != lista.size() and n != lista.size()) {
 				cerr << "Estado invalido: quantidade de codigos presentes diferente do esperado na trie!" << endl;
 				exit(1);
 			}
