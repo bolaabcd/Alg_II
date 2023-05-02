@@ -44,7 +44,7 @@ void descomprime(string entrada, string saida) {
 	int nbits_char = get_nbits(nchars);
 
 	int n;
-	n = ler_int(in, 30); // Assumindo que esse programa nao vai chegar nem perto de ter 2**30 codigos.
+	n = ler_int(in, 30); // Assumindo que esse programa nao vai chegar nem perto de ter 2**30-1 codigos.
 	
 	if(n == 0) {
 		cerr << "Arquivo \"" << entrada << "\" indica tamanho zero pro arquivo comprimido."  << endl;
