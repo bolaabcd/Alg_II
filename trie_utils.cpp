@@ -181,6 +181,8 @@ class Trie {
 				cerr << "Insercao invalida na Trie!" << endl;
 				exit(1);
 			}
+			if(ida[cod][(unsigned char)c] != -1)
+				return;
 			ida[cod][(unsigned char)c] = n;
 			ida.push_back(vector<int>(256,-1));
 			volta.emplace_back(cod,c);
@@ -189,10 +191,15 @@ class Trie {
 			n++;
 		}
 		void bota_str(string s) {
+			bool tem = false;
+			if(tem_str(s))
+				tem = true;
 			int j = 0;
 			for(int i = 0; i < s.size(); i++) {
 				if(ida[j][(unsigned char)s[i]] == -1)
 					bota_char(s[i],j);
+				if(tem and i == s.size()-1)
+					lista.emplace_back(j,s[i]);
 				j = ida[j][(unsigned char)s[i]];
 			}
 		}
@@ -200,7 +207,7 @@ class Trie {
 		void salve(string saida) {
 			Escreve_bit out(saida);
 
-			if(n-1 != lista.size()) {
+			if(n-1 != lista.size() or n == lista.size()) {
 				cerr << "Estado invalido: quantidade de codigos presentes diferente do esperado na trie!" << endl;
 				exit(1);
 			}
@@ -237,6 +244,8 @@ class Trie {
 				ans.push_back(volta[cod].second);
 				cod = volta[cod].first;
 			}
+			for(int i = 0; i < ans.size()/2; i++)
+				swap(ans[i],ans[ans.size()-1-i]);
 			return ans;
 		}
 };

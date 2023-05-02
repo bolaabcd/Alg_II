@@ -19,12 +19,14 @@ void comprime(string entrada, string saida) {
 			break;
 		s.push_back(c);
 		if(not trie.tem_str(s)){
+			//cout << s << endl;
 			trie.bota_str(s);
 			s = "";
 		}
 	}
 	in.close();
 	if(s != "") {
+		//cout << s << endl;
 		trie.bota_str(s);
 	}
 	
@@ -60,7 +62,10 @@ void descomprime(string entrada, string saida) {
 		int cod = ler_int(in,m);
 		int car = ler_int(in,nbits_char);
 		out.coloca_string(trie.val(cod)+char(get_car[car]));
-		trie.bota_char(get_car[car],i);
+		//cout << cod << ' ' << get_car[car] << endl;
+		//cout << cod << ' ' << char(get_car[car]) << ' ' << trie.val(cod)+char(get_car[car]) << endl;
+		//cout << cod << ' ' << trie.val(cod) << endl;
+		trie.bota_char(get_car[car],cod);
 	}
 	in.close();
 	out.close();
