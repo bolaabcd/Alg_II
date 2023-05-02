@@ -35,7 +35,7 @@ void descomprime(string entrada, string saida) {
 	Le_bit in(entrada);
 	Escreve_bit out(saida);
 
-	int nchars = ler_int(in,8);
+	int nchars = ler_int(in,9);
 	map<int,unsigned char> get_car;
 	for(int i = 0; i < nchars; i++) {
 		unsigned char c = ler_int(in,8);

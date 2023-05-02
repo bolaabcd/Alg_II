@@ -164,7 +164,7 @@ class Trie {
 		// verifica se a string existe dentro da trie como prefixo
 		bool tem_str(string s) {
 			int j = 0; // id do no atual
-			for(int i = 0; i < s.size(); i++)
+			for(int i = 0; i < (int)s.size(); i++)
 				if(j != -1) {
 					j = ida[j][(unsigned char)s[i]];
 				}
@@ -193,10 +193,10 @@ class Trie {
 			if(tem_str(s))
 				tem = true;
 			int j = 0;
-			for(int i = 0; i < s.size(); i++) {
+			for(int i = 0; i < (int)s.size(); i++) {
 				if(ida[j][(unsigned char)s[i]] == -1)
 					bota_char(s[i],j);
-				if(tem and i == s.size()-1)
+				if(tem and i == (int)s.size()-1)
 					lista.emplace_back(j,s[i]);
 				j = ida[j][(unsigned char)s[i]];
 			}
@@ -205,7 +205,7 @@ class Trie {
 		void salve(string saida) {
 			Escreve_bit out(saida);
 
-			if(n-1 != lista.size() and n != lista.size()) {
+			if(n-1 != (int)lista.size() and n != (int)lista.size()) {
 				cerr << "Estado invalido: quantidade de codigos presentes diferente do esperado na trie!" << endl;
 				exit(1);
 			}
@@ -223,13 +223,13 @@ class Trie {
 			int nbits_char = get_nbits(chars.size());
 
 			// lista de caracteres usados
-			escreve_int(out,chars.size(),8); // no maximo 2^8 = 256 caracteres usados.
+			escreve_int(out,chars.size(),9); // no maximo 2^8 = 256 caracteres usados.
 			for(unsigned char c : chars)
 				escreve_int(out,c,8);
 				
 			// Lista codigo,(unsigned char)
 			escreve_int(out,lista.size(),30); // no maximo 2^30-1 = 1073741823 entradas na trie.
-			for(int i = 0; i < lista.size(); i++) {
+			for(int i = 0; i < (int)lista.size(); i++) {
 				escreve_int(out,lista[i].first,nbits_cod);
 				escreve_int(out,char_cod[lista[i].second],nbits_char);
 			}
@@ -242,7 +242,7 @@ class Trie {
 				ans.push_back(volta[cod].second);
 				cod = volta[cod].first;
 			}
-			for(int i = 0; i < ans.size()/2; i++)
+			for(int i = 0; i < (int)ans.size()/2; i++)
 				swap(ans[i],ans[ans.size()-1-i]);
 			return ans;
 		}

@@ -1,0 +1,25 @@
+Primeiro:
+A história no KoM só serve como base, pra ajudar a criar quests e dungeons conectadas e bem feitas que façam sentido.
+
+Segundo:
+A história acontece num mundo imaginário, que é visto pelos jogadores num mundo quadrado que nem gravidade tem. Então não tem muito problema estar “viajado”. A única função da história é guiar as quests e dungeons pra facilitar na hora de criar quests e dungeons pra não ter que começar nada do 0.
+
+Então, vo contar tudo que eu penso que pode ser útil que eu criei de história. O objetivo aqui é você conseguir se imaginar criando uma quest ou dg inspirada na história.
+
+Jabu e Ubaj são divindades que um dia já foram irmãos humanos. Ambos possuem muitos seguidores, alguns mais poderosos que os outros. Os únicos que conhecem o passado dos dois são Jabu e o Brionhero. Portanto, o passado deles se torna sem importância pra maioria dos acontecimentos do presente. Detalhe: Jabu sempre foi muito bom na política, em convencer pessoas e ter empatia. Ubaj sempre foi muito bom com a redstone, foi o primeiro grande engenheiro, que descobriu muita coisa sobre a redstone.
+(Com isso dá pra criar referências a essa história em quests e dungeons, sei lá uma históra que alguém salvou Ubaj quando ele estava quase sendo derrotado, aí o player vai avançando na história até descobrir que quem salvou Ubaj foi o próprio Jabu. Isso faz o player ficar curioso e curiosidade é um bom motivo pra se jogar e evoluir no servidor, descobrir “o que será que aconteceu”, ser um detetive. Isso é interessantíssimo. E o limite é a imaginação, dá pra criar muita coisa a partir disso, muita mesmo. E essa parte aí tbm diferencia Jabu e Ubaj, facilita imaginar a personalidade deles, ficam mais realistas e interessantes.)
+
+As seasons passadas são o passado do KoM, por isso as histórias das seasons passadas tem alguma ligação com o presente.
+(Faz os players mais antigos se interessarem e as pessoas conversam mais sobre a história tentando resolver enigmas e etc. No momento de agora as pessoas não ligam pra história porque não vale a pena mesmo, e não tem muito o que descobrir além do que todo mundo sabe, de Jabu ser um deus que foi enfraquecido e etc.)
+
+Jabu possui um grupo de pessoas que lutam do lado dele e são completamente fiéis, os E.L.F.O.S. Eles são disfarçados com aparência de elfos, porém são humanos. Para se tornar um elfo, é necessário passar por inúmeros testes e desafios, fazer um juramento que não pode ser quebrado, o que é garantido por magia. Esse treinamento e teste final ocorrem na vila 2. São incrivelmente secretos, tanto que os que treinam para se tornarem elfos só saem do local de treinamento com a memória modificada. E há uma hierarquia bem definida, os membros “menos importantes” não vão a grandes reuniões. Existem bases na vila 2 (novatos), na vila 3 (espionagem dos anões e esconderijo de emergência), na vila 7 (defesa e estudo da magia da floresta de Óildalg) e em um local distante, próximo à barreira do mundo (local ultrassecreto, onde só os maiores membros vão, como Bellus, Wyvernn e o próprio Jabu).
+(Isso é extremamente útil, tem seres ajudando o player e ele só vai descobrir quem são bem no futuro, começando apenas nas vilas 6 e 7 a descobrir. Além disso, ajuda muito a ter ideias, você pode construir uma base secreta abandonada dos elfos em um lugar e fazer ela de dungeon, que o player vai ver sinais de que foi um local importante e vai demorar pra entender. Quando a pessoa fica criando teorias sobre algo e no final acerta é muito interessante mesmo. Muitos filmes séries e novelas famosos tão aí provando isso.)
+
+Assim como Jabu, Ubaj possui seus seguidores, que são os A.N.O.E.S. Também se disfarçam de outros seres, mas são bem menos organizados que os E.L.F.O.S. A grande maioria são escravos enfeitiçados, até porque Ubaj só quer os mais fortes no seu exército. A vila 3 é onde treinam e são selecionados (são espionados o tempo inteiro pelos E.L.F.O.S. Ubaj até usa isso para testar seus seguidores, selecionando aqueles que conseguem perceber que são vigiados e são poderosos o suficiente para atacar um elfo e sobreviver, logo depois de ter passado por uma masmorra imensa). Diferentemente dos E.L.F.O.S, os A.N.O.E.S não se disfarçam apenas de anão. Na verdade apenas os mais fracos parecem anões, os mais fortes tem aparências de monstros, para intimidar os inimigos.
+(Também muito útil por exemplo fazer uma dungeon que no final tem uma mensagem de um anão contando como sofreu na dungeon e etc. Quests com pessoas dizendo que os elfos são maus, pedindo pro player pegar algo de algum lugar onde elfos ficam, e etc.)
+
+
+
+
+Isso é basicamente a parte da história que eu acho importante contar pra vcs, tem outras também mas não sei se querem ver se quiser eu conto tbm mas o importante que ajuda a criar quests e dungeons é isso aí. E desculpa mandar um texto tem gente que simplesmente não gosta de ler, mas eu não sei outra forma de falar tudo o que quero dizer.
+
